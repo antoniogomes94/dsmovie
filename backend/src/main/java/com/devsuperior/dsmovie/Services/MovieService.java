@@ -31,8 +31,7 @@ public class MovieService {
 	public MovieDTO findById(Long id){
 		Movie result = repository.findById(id).get();
 		
-		MovieDTO page = new MovieDTO(result);
-		
-		return page;
+		MovieDTO dto = new MovieDTO(result);
+		return dto;
 	}
 }
