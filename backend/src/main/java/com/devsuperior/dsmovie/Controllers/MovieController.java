@@ -18,7 +18,14 @@ public class MovieController {
 	public MovieService service;
 	
 	@GetMapping
-	public Page<MovieDTO> findAll(Pageable pageable){
-		return service.findAll(pageable);
+	public Page<MovieDTO> findAll(Pageable model){
+		return service.findAll(model);
 	}
+	
+	@GetMapping(value = "/{id}")
+	public MovieDTO findById(long id){
+		return service.findById(id);
+	}
+	
+	
 }
